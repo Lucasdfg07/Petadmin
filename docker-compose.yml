@@ -1,4 +1,4 @@
-version: '2'
+version: '2.2'
 
 services:
   postgres:
@@ -10,7 +10,7 @@ services:
     image: 'redis:3.2-alpine'
     command: redis-server
     ports:
-      - '6380:6380'
+      - '6379:6379'
     volumes:
       - 'redis:/var/lib/redis/data'
 
@@ -46,10 +46,10 @@ services:
       - /box
 
   mailcatcher:
-    image: tophfr/mailcatcher
+    image: yappabe/mailcatcher
     ports:
-      - 1025:25
-      - 1080:80
+      - 1025:1025
+      - 1080:1080
 
 volumes:
   redis:
